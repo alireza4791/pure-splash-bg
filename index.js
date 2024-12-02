@@ -80,7 +80,6 @@ const showSplat = () => {
         depth: false,
         stencil: false,
         antialias: false,
-        alpha: true,
     };
 
     let gl = canvas.getContext("webgl2", params);
@@ -306,7 +305,7 @@ const showSplat = () => {
         float T = sampleVelocity(vT).y;
         float B = sampleVelocity(vB).y;
         float div = 0.5 * (R - L + T - B);
-        gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
+        gl_FragColor = vec4(div, 1.0, 1.0, 1.0);
     }
 `
     );
@@ -330,7 +329,7 @@ const showSplat = () => {
         float T = texture2D(uVelocity, vT).x;
         float B = texture2D(uVelocity, vB).x;
         float vorticity = R - L - T + B;
-        gl_FragColor = vec4(vorticity, 0.0, 0.0, 1.0);
+        gl_FragColor = vec4(vorticity, 1.0, 1.0, 1.0);
     }
 `
     );
@@ -392,7 +391,7 @@ const showSplat = () => {
         float C = texture2D(uPressure, vUv).x;
         float divergence = texture2D(uDivergence, vUv).x;
         float pressure = (L + R + B + T - divergence) * 0.25;
-        gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
+        gl_FragColor = vec4(pressure, 1.0, 1.0, 1.0);
     }
 `
     );
@@ -582,7 +581,8 @@ const showSplat = () => {
     pointers.push(new pointerPrototype());
 
     for (let i = 0; i < 10; i++) {
-        const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10];
+        // const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10];
+        const color = [ 10, 10, 10];
         const x = canvas.width * Math.random();
         const y = canvas.height * Math.random();
         const dx = 1000 * (Math.random() - 0.5);
