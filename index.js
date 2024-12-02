@@ -30,7 +30,7 @@ let luxySpeed = 0.005;
 // let zoomSpeed = 0.02;
 let opacityOffset = 0;
 let opacitySpeed = 0.02;
-let prevScrollY = 0;
+// let prevScrollY = 0;
 let logoPosX = 2;
 
 const tick = () => {
@@ -42,8 +42,8 @@ const tick = () => {
     // } else {
     //     zoomSpeed = scrollY >= prevScrollY ? 0.02 : 0.3;
     // }
-    camera.updateProjectionMatrix();
-    prevScrollY = scrollY;
+    // camera.updateProjectionMatrix();
+    // prevScrollY = scrollY;
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick);
@@ -747,8 +747,8 @@ const showSplat = () => {
             // canvasThree.height = sizes.height;
 
             // Update camera
-            camera.aspect = sizes.width / sizes.height;
-            camera.updateProjectionMatrix();
+            // camera.aspect = sizes.width / sizes.height;
+            // camera.updateProjectionMatrix();
         }
     }
 
