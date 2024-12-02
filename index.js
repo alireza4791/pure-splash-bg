@@ -753,37 +753,37 @@ const showSplat = () => {
     }
 
     homePageBody.addEventListener("mousemove", (e) => {
-        if (
-            window
-                .getComputedStyle(document.querySelector(".menu"), null)
-                .getPropertyValue("display") == "none"
-        ) {
-            pointers[0].moved = pointers[0].down;
-            pointers[0].dx = (e.clientX - pointers[0].x) * 10.0;
-            pointers[0].dy = (e.clientY - pointers[0].y) * 10.0;
-            pointers[0].x = e.clientX;
-            pointers[0].y = e.clientY;
-        }
+        // if (
+        //     window
+        //         .getComputedStyle(document.querySelector(".menu"), null)
+        //         .getPropertyValue("display") == "none"
+        // ) {
+        pointers[0].moved = pointers[0].down;
+        pointers[0].dx = (e.clientX - pointers[0].x) * 10.0;
+        pointers[0].dy = (e.clientY - pointers[0].y) * 10.0;
+        pointers[0].x = e.clientX;
+        pointers[0].y = e.clientY;
+        // }
     });
 
     homePageBody.addEventListener("touchmove", (e) => {
-        if (
-            window
-                .getComputedStyle(document.querySelector(".menu"), null)
-                .getPropertyValue("display") == "none"
-        ) {
-            for (let i = 0; i < e.touches.length; i++) {
-                if (i >= pointers.length) {
-                    pointers.push(new pointerPrototype());
-                }
-                let pointer = pointers[i];
-                pointer.moved = pointer.down;
-                pointer.dx = (e.touches[i].pageX - pointer.x) * 10.0;
-                pointer.dy = (e.touches[i].pageY - pointer.y) * 10.0;
-                pointer.x = e.touches[i].pageX;
-                pointer.y = e.touches[i].pageY;
+        // if (
+        //     window
+        //         .getComputedStyle(document.querySelector(".menu"), null)
+        //         .getPropertyValue("display") == "none"
+        // ) {
+        for (let i = 0; i < e.touches.length; i++) {
+            if (i >= pointers.length) {
+                pointers.push(new pointerPrototype());
             }
+            let pointer = pointers[i];
+            pointer.moved = pointer.down;
+            pointer.dx = (e.touches[i].pageX - pointer.x) * 10.0;
+            pointer.dy = (e.touches[i].pageY - pointer.y) * 10.0;
+            pointer.x = e.touches[i].pageX;
+            pointer.y = e.touches[i].pageY;
         }
+        // }
     });
 
     homePageBody.addEventListener("mouseover", onPointerDown);
