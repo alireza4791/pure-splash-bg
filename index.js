@@ -701,6 +701,7 @@ const showSplat = () => {
     }
 
     function splat(x, y, dx, dy, color) {
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         splatProgram.bind();
         gl.uniform1i(splatProgram.uniforms.uTarget, velocity.first[2]);
         gl.uniform1f(
@@ -739,6 +740,7 @@ const showSplat = () => {
         );
         blit(density.second[1]);
         density.swap();
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
     }
 
     function resizeCanvas() {
