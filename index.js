@@ -92,7 +92,7 @@ const showSplat = () => {
             canvas.getContext("experimental-webgl", params);
     }
     // gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clearColor(0.0, 0.5, 0.0, 1.0);
+    gl.clearColor(255.0, 255.0, 255.0, 1.0);
 
     const halfFloat = gl.getExtension("OES_texture_half_float");
     let support_linear_float = gl.getExtension("OES_texture_half_float_linear");
@@ -102,9 +102,7 @@ const showSplat = () => {
     }
 
     // gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clearColor(0.0, 0.5, 0.0, 1.0);
-    gl.fillStyle = "white";
-    // gl.fillRect(0, 0, canvas.width, canvas.height);
+    gl.clearColor(255.0, 255.0, 255.0, 1.0);
 
     resizeCanvas();
 
@@ -455,7 +453,7 @@ const showSplat = () => {
 
     function clear(target) {
         gl.bindFramebuffer(gl.FRAMEBUFFER, target);
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
+        gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
     }
 
@@ -489,7 +487,7 @@ const showSplat = () => {
             0
         );
         gl.viewport(0, 0, width, height);
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
+        gl.clearColor(255.0, 255.0, 255.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
 
         return [texture, fbo, texId];
@@ -600,7 +598,6 @@ const showSplat = () => {
     Update();
 
     function Update() {
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         resizeCanvas();
 
         const dt = Math.min((Date.now() - lastTime) / 1000, 0.016);
@@ -632,7 +629,6 @@ const showSplat = () => {
             if (pointer.moved) {
                 splat(pointer.x, pointer.y, pointer.dx, pointer.dy, pointer.color);
                 pointer.moved = false;
-                gl.clearColor(0.0, 0.5, 0.0, 1.0);
             }
         }
 
@@ -668,7 +664,6 @@ const showSplat = () => {
         blit(divergence[1]);
 
         clear(pressure.first[1]);
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         pressureProgram.bind();
         gl.uniform2f(
             pressureProgram.uniforms.texelSize,
@@ -680,7 +675,6 @@ const showSplat = () => {
             gl.uniform1i(pressureProgram.uniforms.uPressure, pressure.first[2]);
             blit(pressure.second[1]);
             pressure.swap();
-            gl.clearColor(0.0, 0.5, 0.0, 1.0);
         }
 
         gradienSubtractProgram.bind();
@@ -698,12 +692,10 @@ const showSplat = () => {
         displayProgram.bind();
         gl.uniform1i(displayProgram.uniforms.uTexture, density.first[2]);
         blit(null);
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         requestAnimationFrame(Update);
     }
 
     function splat(x, y, dx, dy, color) {
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         splatProgram.bind();
         gl.uniform1i(splatProgram.uniforms.uTarget, velocity.first[2]);
         gl.uniform1f(
