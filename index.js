@@ -92,7 +92,7 @@ const showSplat = () => {
             canvas.getContext("experimental-webgl", params);
     }
     // gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clearColor(1, 1, 1, 1.0);
+    gl.clearColor(0.0, 0.5, 0.0, 1.0);
 
     const halfFloat = gl.getExtension("OES_texture_half_float");
     let support_linear_float = gl.getExtension("OES_texture_half_float_linear");
@@ -102,7 +102,7 @@ const showSplat = () => {
     }
 
     // gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clearColor(1, 1, 1, 1.0);
+    gl.clearColor(0.0, 0.5, 0.0, 1.0);
     gl.fillStyle = "white";
     // gl.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -455,7 +455,7 @@ const showSplat = () => {
 
     function clear(target) {
         gl.bindFramebuffer(gl.FRAMEBUFFER, target);
-        gl.clearColor(1, 1, 1, 1.0);
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
     }
 
@@ -489,7 +489,7 @@ const showSplat = () => {
             0
         );
         gl.viewport(0, 0, width, height);
-        gl.clearColor(1, 1, 1, 1.0);
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
 
         return [texture, fbo, texId];
