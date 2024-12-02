@@ -440,7 +440,7 @@ const showSplat = () => {
             new Uint16Array([0, 1, 2, 0, 2, 3]),
             gl.STATIC_DRAW
         );
-        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 1, 1);
         gl.enableVertexAttribArray(0);
 
         return (destination) => {
@@ -582,7 +582,7 @@ const showSplat = () => {
 
     for (let i = 0; i < 10; i++) {
         // const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10];
-        const color = [ 10, 10, 10];
+        const color = [10, 10, 10];
         const x = canvas.width * Math.random();
         const y = canvas.height * Math.random();
         const dx = 1000 * (Math.random() - 0.5);
