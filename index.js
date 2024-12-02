@@ -15,14 +15,6 @@ const sizes = {
     height: window.innerHeight,
 };
 
-// load a resource
-let percentageLoaderNumber = 0;
-let percentageInterval;
-let loaderTimeout;
-let loaderTimeoutColors;
-
-showSplat();
-
 let previousTime = 0;
 let coords = {
     x: 0,
@@ -829,3 +821,7 @@ const showSplat = () => {
     }
 
 };
+
+window.addEventListener('load', () => {
+    showSplat();
+})
