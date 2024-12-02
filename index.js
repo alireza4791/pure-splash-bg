@@ -598,10 +598,10 @@ const showSplat = () => {
     Update();
 
     function drawColor() {
-        // displayProgram.bind();
-        splatProgram.bind();
-        // gl.uniform4f(displayProgram.uniforms.color, 1, 1, 1, 1);
-        gl.uniform4f(splatProgram.uniforms.color, 1, 1, 1, 1);
+        displayProgram.bind();
+        // splatProgram.bind();
+        gl.uniform4f(displayProgram.uniforms.color, 1, 1, 1, 1);
+        // gl.uniform4f(splatProgram.uniforms.color, 1, 1, 1, 1);
         // blit(target);
     }
 
