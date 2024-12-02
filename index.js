@@ -734,7 +734,6 @@ const showSplat = () => {
         );
         blit(density.second[1]);
         density.swap();
-        gl.clearColor(0.0, 0.5, 0.0, 1.0);
     }
 
     function resizeCanvas() {
