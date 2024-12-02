@@ -632,6 +632,7 @@ const showSplat = () => {
             if (pointer.moved) {
                 splat(pointer.x, pointer.y, pointer.dx, pointer.dy, pointer.color);
                 pointer.moved = false;
+                gl.clearColor(0.0, 0.5, 0.0, 1.0);
             }
         }
 
@@ -679,6 +680,7 @@ const showSplat = () => {
             gl.uniform1i(pressureProgram.uniforms.uPressure, pressure.first[2]);
             blit(pressure.second[1]);
             pressure.swap();
+            gl.clearColor(0.0, 0.5, 0.0, 1.0);
         }
 
         gradienSubtractProgram.bind();
