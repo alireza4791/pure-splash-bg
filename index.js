@@ -123,7 +123,7 @@ function getWebGLContext(canvas) {
         formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
     }
 
-    ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', formatRGBA == null ? 'not supported' : 'supported');
+    // ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', formatRGBA == null ? 'not supported' : 'supported');
 
     return {
         gl,
@@ -1423,7 +1423,7 @@ function correctRadius(radius) {
     return radius;
 }
 
-canvas.addEventListener('mouseover', e => {
+homePageBody.addEventListener('mouseover', e => {
     let posX = scaleByPixelRatio(e.offsetX);
     let posY = scaleByPixelRatio(e.offsetY);
     let pointer = pointers.find(p => p.id == -1);
@@ -1432,7 +1432,7 @@ canvas.addEventListener('mouseover', e => {
     updatePointerDownData(pointer, -1, posX, posY);
 });
 
-canvas.addEventListener('mousemove', e => {
+homePageBody.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
     let posX = scaleByPixelRatio(e.offsetX);
@@ -1444,7 +1444,7 @@ window.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
-canvas.addEventListener('touchstart', e => {
+homePageBody.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
@@ -1456,7 +1456,7 @@ canvas.addEventListener('touchstart', e => {
     }
 });
 
-canvas.addEventListener('touchmove', e => {
+window.addEventListener('touchmove', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
