@@ -1,5 +1,5 @@
 // Canvas
-const canvasThree = document.querySelector("canvas.webgl");
+// const canvasThree = document.querySelector("canvas.webgl");
 let homePageBody = document.querySelector("body");
 
 //helper function
@@ -751,8 +751,8 @@ const showSplat = () => {
             sizes.width = canvas.clientWidth;
             sizes.height = displayHeight;
 
-            canvasThree.width = sizes.width;
-            canvasThree.height = sizes.height;
+            // canvasThree.width = sizes.width;
+            // canvasThree.height = sizes.height;
 
             // Update camera
             camera.aspect = sizes.width / sizes.height;
