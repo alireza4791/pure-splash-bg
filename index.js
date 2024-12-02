@@ -597,11 +597,11 @@ const showSplat = () => {
     let lastTime = Date.now();
     Update();
 
-    function drawColor(color) {
-        displayProgram.bind();
-        // splatProgram.bind();
-        gl.uniform4f(displayProgram.uniforms.color, 1, 1, 1, 1);
-        // gl.uniform4f(splatProgram.uniforms.color, 1, 1, 1, 1);
+    function drawColor() {
+        // displayProgram.bind();
+        splatProgram.bind();
+        // gl.uniform4f(displayProgram.uniforms.color, 1, 1, 1, 1);
+        gl.uniform4f(splatProgram.uniforms.color, 1, 1, 1, 1);
         // blit(target);
     }
 
@@ -692,7 +692,7 @@ const showSplat = () => {
         gl.uniform1i(gradienSubtractProgram.uniforms.uVelocity, velocity.first[2]);
         blit(velocity.second[1]);
         velocity.swap();
-        drawColor(1, 1, 1, 1);
+        drawColor();
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         displayProgram.bind();
         gl.uniform1i(displayProgram.uniforms.uTexture, density.first[2]);
