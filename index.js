@@ -1424,7 +1424,7 @@ function correctRadius(radius) {
     return radius;
 }
 
-window.addEventListener('mouseover', e => {
+homePageBody.addEventListener('mouseover', e => {
     let posX = scaleByPixelRatio(e.offsetX);
     let posY = scaleByPixelRatio(e.offsetY);
     let pointer = pointers.find(p => p.id == -1);
@@ -1433,7 +1433,7 @@ window.addEventListener('mouseover', e => {
     updatePointerDownData(pointer, -1, posX, posY);
 });
 
-window.addEventListener('mousemove', e => {
+homePageBody.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
     let posX = scaleByPixelRatio(e.offsetX);
@@ -1441,11 +1441,11 @@ window.addEventListener('mousemove', e => {
     updatePointerMoveData(pointer, posX, posY);
 });
 
-window.addEventListener('mouseup', () => {
+homePageBody.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
-window.addEventListener('touchstart', e => {
+homePageBody.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
@@ -1457,7 +1457,7 @@ window.addEventListener('touchstart', e => {
     }
 });
 
-window.addEventListener('touchmove', e => {
+homePageBody.addEventListener('touchmove', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
@@ -1469,7 +1469,7 @@ window.addEventListener('touchmove', e => {
     }
 }, false);
 
-window.addEventListener('touchend', e => {
+homePageBody.addEventListener('touchend', e => {
     const touches = e.changedTouches;
     for (let i = 0; i < touches.length; i++) {
         let pointer = pointers.find(p => p.id == touches[i].identifier);
