@@ -26,6 +26,7 @@ SOFTWARE.
 // Simulation section
 
 const canvas = document.querySelector('.splash-canvas');
+const homePageBody = document.querySelector("body");
 resizeCanvas();
 
 let config = {
