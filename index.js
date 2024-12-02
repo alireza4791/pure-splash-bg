@@ -691,6 +691,7 @@ const showSplat = () => {
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         displayProgram.bind();
         gl.uniform1i(displayProgram.uniforms.uTexture, density.first[2]);
+        gl.clearColor(1, 1, 1, 1.0);
         blit(null);
         requestAnimationFrame(Update);
     }
