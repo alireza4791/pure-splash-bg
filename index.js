@@ -15,7 +15,7 @@ const sizes = {
     height: window.innerHeight,
 };
 
-let previousTime = 0;
+// let previousTime = 0;
 let coords = {
     x: 0,
     y: 0,
@@ -25,23 +25,23 @@ const windowHalfX = window.innerWidth / 2;
 let logoRotationDivider = 1;
 
 let luxySpeed = 0.005;
-let luxyOffset = 0;
-let zoomOffset = 0;
-let zoomSpeed = 0.02;
+// let luxyOffset = 0;
+// let zoomOffset = 0;
+// let zoomSpeed = 0.02;
 let opacityOffset = 0;
 let opacitySpeed = 0.02;
 let prevScrollY = 0;
 let logoPosX = 2;
 
 const tick = () => {
-    const elapsedTime = clock.getElapsedTime();
-    const deltaTime = elapsedTime - previousTime;
-    previousTime = elapsedTime;
-    if (window.innerWidth <= 768) {
-        zoomSpeed = scrollY >= prevScrollY ? 0.02 : 1;
-    } else {
-        zoomSpeed = scrollY >= prevScrollY ? 0.02 : 0.3;
-    }
+    // const elapsedTime = clock.getElapsedTime();
+    // const deltaTime = elapsedTime - previousTime;
+    // previousTime = elapsedTime;
+    // if (window.innerWidth <= 768) {
+    //     zoomSpeed = scrollY >= prevScrollY ? 0.02 : 1;
+    // } else {
+    //     zoomSpeed = scrollY >= prevScrollY ? 0.02 : 0.3;
+    // }
     camera.updateProjectionMatrix();
     prevScrollY = scrollY;
 
