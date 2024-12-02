@@ -454,6 +454,7 @@ const showSplat = () => {
     function clear(target) {
         gl.bindFramebuffer(gl.FRAMEBUFFER, target);
         gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.clearColor(1, 1, 1, 1.0);
     }
 
     function createFBO(texId, width, height, format, type, param) {
@@ -487,6 +488,7 @@ const showSplat = () => {
         );
         gl.viewport(0, 0, width, height);
         gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.clearColor(1, 1, 1, 1.0);
 
         return [texture, fbo, texId];
     }
