@@ -76,12 +76,12 @@ const showSplat = () => {
     const canvas = document.querySelector(".splash-canvas");
 
     const params = {
-        alpha: true,
+        alpha: false,
         depth: false,
         stencil: false,
         antialias: false,
-        preserveDrawingBuffer: true,
-        premultipliedAlpha: true
+        // preserveDrawingBuffer: true,
+        // premultipliedAlpha: true
     };
 
     let gl = canvas.getContext("webgl2", params);
