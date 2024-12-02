@@ -799,10 +799,15 @@ const showSplat = () => {
         // ) {
         for (let i = 0; i < pointers.length; i++) {
             pointers[i].down = true;
+            // pointers[i].color = [
+            //     Math.random() + 0.2,
+            //     Math.random() + 0.2,
+            //     Math.random() + 0.2,
+            // ];
             pointers[i].color = [
-                Math.random() + 0.2,
-                Math.random() + 0.2,
-                Math.random() + 0.2,
+                1,
+                1,
+                1,
             ];
         }
         // }
