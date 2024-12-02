@@ -581,8 +581,8 @@ const showSplat = () => {
     pointers.push(new pointerPrototype());
 
     for (let i = 0; i < 10; i++) {
-        // const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10];
-        const color = [0, 0, 0];
+        const color = [Math.random() * 10, Math.random() * 10, Math.random() * 10];
+        // const color = [10, 10, 10];
         const x = canvas.width * Math.random();
         const y = canvas.height * Math.random();
         const dx = 1000 * (Math.random() - 0.5);
@@ -801,16 +801,16 @@ const showSplat = () => {
         // ) {
         for (let i = 0; i < pointers.length; i++) {
             pointers[i].down = true;
-            // pointers[i].color = [
-            //     Math.random() + 0.2,
-            //     Math.random() + 0.2,
-            //     Math.random() + 0.2,
-            // ];
             pointers[i].color = [
-                0,
-                0,
-                0,
+                Math.random() + 0.2,
+                Math.random() + 0.2,
+                Math.random() + 0.2,
             ];
+            // pointers[i].color = [
+            //     0,
+            //     0,
+            //     0,
+            // ];
         }
         // }
     }
