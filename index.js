@@ -600,6 +600,7 @@ const showSplat = () => {
     Update();
 
     function Update() {
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         resizeCanvas();
 
         const dt = Math.min((Date.now() - lastTime) / 1000, 0.016);
@@ -666,6 +667,7 @@ const showSplat = () => {
         blit(divergence[1]);
 
         clear(pressure.first[1]);
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         pressureProgram.bind();
         gl.uniform2f(
             pressureProgram.uniforms.texelSize,
@@ -694,6 +696,7 @@ const showSplat = () => {
         displayProgram.bind();
         gl.uniform1i(displayProgram.uniforms.uTexture, density.first[2]);
         blit(null);
+        gl.clearColor(0.0, 0.5, 0.0, 1.0);
         requestAnimationFrame(Update);
     }
 
@@ -747,16 +750,8 @@ const showSplat = () => {
             canvas.width = canvas.clientWidth;
             canvas.height = displayHeight;
 
-            // Update sizes
             sizes.width = canvas.clientWidth;
             sizes.height = displayHeight;
-
-            // canvasThree.width = sizes.width;
-            // canvasThree.height = sizes.height;
-
-            // Update camera
-            // camera.aspect = sizes.width / sizes.height;
-            // camera.updateProjectionMatrix();
         }
     }
 
