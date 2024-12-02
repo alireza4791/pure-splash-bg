@@ -1424,7 +1424,7 @@ function correctRadius(radius) {
     return radius;
 }
 
-homePageBody.addEventListener('mouseover', e => {
+window.addEventListener('mouseover', e => {
     let posX = scaleByPixelRatio(e.offsetX);
     let posY = scaleByPixelRatio(e.offsetY);
     let pointer = pointers.find(p => p.id == -1);
@@ -1433,7 +1433,7 @@ homePageBody.addEventListener('mouseover', e => {
     updatePointerDownData(pointer, -1, posX, posY);
 });
 
-homePageBody.addEventListener('mousemove', e => {
+window.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
     let posX = scaleByPixelRatio(e.offsetX);
@@ -1445,7 +1445,7 @@ window.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
-homePageBody.addEventListener('touchstart', e => {
+window.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
