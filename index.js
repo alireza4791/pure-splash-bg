@@ -90,7 +90,8 @@ const showSplat = () => {
             canvas.getContext("webgl", params) ||
             canvas.getContext("experimental-webgl", params);
     }
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(1, 1, 1, 1.0);
 
     const halfFloat = gl.getExtension("OES_texture_half_float");
     let support_linear_float = gl.getExtension("OES_texture_half_float_linear");
@@ -99,7 +100,8 @@ const showSplat = () => {
         support_linear_float = gl.getExtension("OES_texture_float_linear");
     }
 
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(1, 1, 1, 1.0);
 
     resizeCanvas();
 
