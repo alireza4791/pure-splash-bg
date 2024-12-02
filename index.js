@@ -440,7 +440,7 @@ const showSplat = () => {
             new Uint16Array([0, 1, 2, 0, 2, 3]),
             gl.STATIC_DRAW
         );
-        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 1, 1);
+        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
         gl.enableVertexAttribArray(0);
 
         return (destination) => {
