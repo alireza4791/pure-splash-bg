@@ -80,6 +80,8 @@ const showSplat = () => {
         depth: false,
         stencil: false,
         antialias: false,
+        preserveDrawingBuffer: true,
+        premultipliedAlpha: true
     };
 
     let gl = canvas.getContext("webgl2", params);
