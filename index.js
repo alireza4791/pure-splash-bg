@@ -102,7 +102,7 @@ const showSplat = () => {
     // gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clearColor(1, 1, 1, 1.0);
     gl.fillStyle = "white";
-    gl.fillRect(0, 0, canvas.width, canvas.height);
+    // gl.fillRect(0, 0, canvas.width, canvas.height);
 
     resizeCanvas();
 
