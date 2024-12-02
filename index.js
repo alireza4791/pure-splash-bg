@@ -792,32 +792,32 @@ const showSplat = () => {
     window.addEventListener("touchend", onPointerUp);
 
     function onPointerDown() {
-        if (
-            window
-                .getComputedStyle(document.querySelector(".menu"), null)
-                .getPropertyValue("display") == "none"
-        ) {
-            for (let i = 0; i < pointers.length; i++) {
-                pointers[i].down = true;
-                pointers[i].color = [
-                    Math.random() + 0.2,
-                    Math.random() + 0.2,
-                    Math.random() + 0.2,
-                ];
-            }
+        // if (
+        //     window
+        //         .getComputedStyle(document.querySelector(".menu"), null)
+        //         .getPropertyValue("display") == "none"
+        // ) {
+        for (let i = 0; i < pointers.length; i++) {
+            pointers[i].down = true;
+            pointers[i].color = [
+                Math.random() + 0.2,
+                Math.random() + 0.2,
+                Math.random() + 0.2,
+            ];
         }
+        // }
     }
 
     function onPointerUp() {
-        if (
-            window
-                .getComputedStyle(document.querySelector(".menu"), null)
-                .getPropertyValue("display") == "none"
-        ) {
-            for (let i = 0; i < pointers.length; i++) {
-                pointers[i].down = false;
-            }
+        // if (
+        //     window
+        //         .getComputedStyle(document.querySelector(".menu"), null)
+        //         .getPropertyValue("display") == "none"
+        // ) {
+        for (let i = 0; i < pointers.length; i++) {
+            pointers[i].down = false;
         }
+        // }
     }
 
 };
