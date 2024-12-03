@@ -27,6 +27,8 @@ SOFTWARE.
 
 const canvas = document.querySelector('.splash-canvas');
 const homePageBody = document.querySelector("body");
+const mainWrapper = document.querySelector("#main");
+
 resizeCanvas();
 
 let config = {
@@ -1424,7 +1426,7 @@ function correctRadius(radius) {
     return radius;
 }
 
-homePageBody.addEventListener('mouseover', e => {
+mainWrapper.addEventListener('mouseover', e => {
     let posX = scaleByPixelRatio(e.offsetX);
     let posY = scaleByPixelRatio(e.offsetY);
     let pointer = pointers.find(p => p.id == -1);
@@ -1433,7 +1435,7 @@ homePageBody.addEventListener('mouseover', e => {
     updatePointerDownData(pointer, -1, posX, posY);
 });
 
-homePageBody.addEventListener('mousemove', e => {
+mainWrapper.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
     let posX = scaleByPixelRatio(e.offsetX);
@@ -1441,11 +1443,11 @@ homePageBody.addEventListener('mousemove', e => {
     updatePointerMoveData(pointer, posX, posY);
 });
 
-homePageBody.addEventListener('mouseup', () => {
+mainWrapper.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
-homePageBody.addEventListener('touchstart', e => {
+mainWrapper.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
@@ -1457,7 +1459,7 @@ homePageBody.addEventListener('touchstart', e => {
     }
 });
 
-homePageBody.addEventListener('touchmove', e => {
+mainWrapper.addEventListener('touchmove', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
@@ -1469,7 +1471,7 @@ homePageBody.addEventListener('touchmove', e => {
     }
 }, false);
 
-homePageBody.addEventListener('touchend', e => {
+mainWrapper.addEventListener('touchend', e => {
     const touches = e.changedTouches;
     for (let i = 0; i < touches.length; i++) {
         let pointer = pointers.find(p => p.id == touches[i].identifier);
