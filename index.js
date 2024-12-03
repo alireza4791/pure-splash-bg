@@ -1549,9 +1549,9 @@ function correctDeltaY(delta) {
 
 function generateColor() {
     let c = {
-        r: 197 / 255,
-        g: 252 / 255,
-        b: 252 / 255
+        r: 128 / 255,
+        g: 128 / 255,
+        b: 128 / 255
     };
     // let c;
     if (modeStatus == 'black') {
@@ -1563,12 +1563,12 @@ function generateColor() {
         }
     }
     else if (modeStatus == 'white') {
-        c = HSVtoRGB(0.5, 1.0, 1.0);
-        // c = {
-        //     r: 255 / 255,
-        //     g: 255 / 255,
-        //     b: 255 / 255
-        // }
+        // c = HSVtoRGB(0.5, 1.0, 1.0);
+        c = {
+            r: 128 / 255,
+            g: 128 / 255,
+            b: 128 / 255
+        }
     }
     c.r *= 0.15;
     c.g *= 0.15;
