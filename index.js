@@ -1484,6 +1484,7 @@ window.addEventListener('touchend', e => {
 });
 
 modeChangeButton.addEventListener('pointerdown', () => {
+    console.log(getComputedStyle(document.body).getPropertyValue('--black'));
     if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(0, 0, 0, 1)") {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
         console.log('black');
