@@ -1410,16 +1410,16 @@ function splat(x, y, dx, dy, color) {
     gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
     gl.uniform1f(splatProgram.uniforms.aspectRatio, canvas.width / canvas.height);
     if (window.innerWidth <= 768) {
-        gl.uniform2f(
-            splatProgram.uniforms.point,
-            x / canvas.width,
-            Math.abs(
-                1.0 -
-                (y % window.innerHeight) / canvas.height +
-                window.scrollY / window.innerHeight
-            ) % 1
-        );
-        gl.uniform2f(splatProgram.uniforms.point, x, Math.abs(y) % 1);
+        // gl.uniform2f(
+        //     splatProgram.uniforms.point,
+        //     x / canvas.width,
+        //     Math.abs(
+        //         1.0 -
+        //         (y % window.innerHeight) / canvas.height +
+        //         window.scrollY / window.innerHeight
+        //     ) % 1
+        // );
+        gl.uniform2f(splatProgram.uniforms.point, x, Math.abs(y + window.scrollY / window.innerHeight) % 1);
     } else {
         gl.uniform2f(splatProgram.uniforms.point, x, y);
     }
