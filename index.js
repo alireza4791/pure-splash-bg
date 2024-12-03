@@ -1394,9 +1394,9 @@ function splatPointer(pointer) {
 function multipleSplats(amount) {
     for (let i = 0; i < amount; i++) {
         const color = generateColor();
-        // color.r *= 10.0;
-        // color.g *= 10.0;
-        // color.b *= 10.0;
+        color.r *= 10.0;
+        color.g *= 10.0;
+        color.b *= 10.0;
         const x = Math.random();
         const y = Math.random();
         const dx = 1000 * (Math.random() - 0.5);
@@ -1577,12 +1577,12 @@ function generateColor() {
         }
     }
     else if (modeStatus == 'white') {
-        // c = HSVtoRGB(0.5, 1.0, 1.0);
-        c = {
-            r: 128 / 255,
-            g: 128 / 255,
-            b: 128 / 255
-        }
+        c = HSVtoRGB(0, 0, 0.52);
+        // c = {
+        //     r: 128 / 255,
+        //     g: 128 / 255,
+        //     b: 128 / 255
+        // }
     }
     c.r *= 0.15;
     c.g *= 0.15;
