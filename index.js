@@ -28,7 +28,6 @@ SOFTWARE.
 const canvas = document.querySelector('.splash-canvas');
 const homePageBody = document.querySelector("body");
 const mainWrapper = document.querySelector("#main");
-const canvasOuter = document.querySelector('.canvas-outer');
 
 resizeCanvas();
 
@@ -41,8 +40,8 @@ let config = {
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 20,
     CURL: 30,
-    SPLAT_RADIUS: 0.25,
-    SPLAT_FORCE: 6000,
+    SPLAT_RADIUS: 0.2,
+    SPLAT_FORCE: 5000,
     SHADING: true,
     COLORFUL: true,
     COLOR_UPDATE_SPEED: 10,
@@ -1450,7 +1449,7 @@ window.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
-canvasOuter.addEventListener('touchstart', e => {
+homePageBody.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
@@ -1462,7 +1461,7 @@ canvasOuter.addEventListener('touchstart', e => {
     }
 });
 
-canvasOuter.addEventListener('touchmove', e => {
+homePageBody.addEventListener('touchmove', e => {
     e.preventDefault();
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
@@ -1474,7 +1473,7 @@ canvasOuter.addEventListener('touchmove', e => {
     }
 }, false);
 
-canvasOuter.addEventListener('touchend', e => {
+window.addEventListener('touchend', e => {
     const touches = e.changedTouches;
     for (let i = 0; i < touches.length; i++) {
         let pointer = pointers.find(p => p.id == touches[i].identifier);
