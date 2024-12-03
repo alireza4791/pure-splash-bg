@@ -1489,7 +1489,7 @@ modeChangeButton.addEventListener('pointerdown', () => {
     } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
         config.BACK_COLOR = { r: 238, g: 244, b: 244 };
     }
-    drawColor(target, normalizeColor(config.BACK_COLOR));
+    drawColor(null, normalizeColor(config.BACK_COLOR));
 })
 
 // window.addEventListener('keydown', e => {
