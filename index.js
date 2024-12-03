@@ -29,6 +29,7 @@ const canvas = document.querySelector('.splash-canvas');
 const homePageBody = document.querySelector("body");
 const mainWrapper = document.querySelector("#main");
 const modeChangeButton = document.querySelector('.mode-toggle-wrapper');
+const modeStatus = 'white';
 
 resizeCanvas();
 
@@ -1484,13 +1485,13 @@ window.addEventListener('touchend', e => {
 });
 
 modeChangeButton.addEventListener('pointerdown', () => {
-    console.log(getComputedStyle(document.body).getPropertyValue('--black'));
-    if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(0, 0, 0, 1)") {
+    // console.log(getComputedStyle(document.body).getPropertyValue('--black'));
+    if (modeStatus = 'white') {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
-        console.log('black');
-    } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
+        modeStatus = 'black';
+    } else if (modeStatus = 'black') {
         config.BACK_COLOR = { r: 238, g: 244, b: 244 };
-        console.log('white');
+        modeStatus = 'white';
     }
     let res = getResolution(config.CAPTURE_RESOLUTION);
     let target = createFBO(res.width, res.height, ext.formatRGBA.internalFormat, ext.formatRGBA.format, ext.halfFloatTexType, gl.NEAREST);
