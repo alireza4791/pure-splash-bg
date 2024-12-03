@@ -1573,12 +1573,12 @@ function generateColor() {
         }
     }
     else if (modeStatus == 'white') {
-        c = HSVtoRGB(0.5, 0.96, 0.08);
-        // c = {
-        //     r: 128 / 255,
-        //     g: 128 / 255,
-        //     b: 128 / 255
-        // }
+        // c = HSVtoRGB(0.5, 0.96, 0.08);
+        c = {
+            r: 1 / 255,
+            g: 20 / 255,
+            b: 20 / 255
+        }
     }
     c.r *= 0.15;
     c.g *= 0.15;
