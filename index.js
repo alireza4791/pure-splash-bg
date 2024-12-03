@@ -1423,7 +1423,7 @@ function splat(x, y, dx, dy, color) {
     } else {
         gl.uniform2f(splatProgram.uniforms.point, x, y);
     }
-    console.log(y, 'y')
+    
     // gl.uniform2f(splatProgram.uniforms.point, x, y);
     gl.uniform3f(splatProgram.uniforms.color, dx, dy, 0.0);
     gl.uniform1f(splatProgram.uniforms.radius, correctRadius(config.SPLAT_RADIUS / 100.0));
@@ -1500,7 +1500,6 @@ window.addEventListener('touchend', e => {
 });
 
 modeChangeButton.addEventListener('pointerdown', () => {
-    // console.log(getComputedStyle(document.body).getPropertyValue('--black'));
     if (modeStatus == 'white') {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
         modeStatus = 'black';
@@ -1580,9 +1579,9 @@ function generateColor() {
     else if (modeStatus == 'white') {
         // c = HSVtoRGB(0.5, 1.0, 1.0);
         c = {
-            r: 1,
-            g: 1,
-            b: 1
+            r: 128 / 255,
+            g: 128 / 255,
+            b: 128 / 255
         }
     }
     c.r *= 0.15;
