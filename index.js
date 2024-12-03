@@ -1569,9 +1569,9 @@ function generateColor() {
             b: 233
         }
     }
-    c.r *= 0.15;
-    c.g *= 0.15;
-    c.b *= 0.15;
+    // c.r *= 0.15;
+    // c.g *= 0.15;
+    // c.b *= 0.15;
     return c;
 }
 
