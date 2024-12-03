@@ -1486,10 +1486,14 @@ window.addEventListener('touchend', e => {
 modeChangeButton.addEventListener('pointerdown', () => {
     if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(0, 0, 0, 1)") {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
+        console.log('black');
     } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
         config.BACK_COLOR = { r: 238, g: 244, b: 244 };
+        console.log('white');
     }
-    render(null);
+    let res = getResolution(config.CAPTURE_RESOLUTION);
+    let target = createFBO(res.width, res.height, ext.formatRGBA.internalFormat, ext.formatRGBA.format, ext.halfFloatTexType, gl.NEAREST);
+    render(target);
     // colorProgram.bind();
     // gl.uniform4f(colorProgram.uniforms.color, normalizeColor(config.BACK_COLOR).r, normalizeColor(config.BACK_COLOR).g, normalizeColor(config.BACK_COLOR).b, 1);
 })
