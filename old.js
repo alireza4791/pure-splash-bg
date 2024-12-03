@@ -52,9 +52,9 @@ const tick = () => {
 tick();
 
 //track users mouse/touch position
-const onMouseMove = (event) => {
-    coords.x = event.clientX / sizes.width - 0.5;
-};
+// const onMouseMove = (event) => {
+//     coords.x = event.clientX / sizes.width - 0.5;
+// };
 
 const onTouchMove = (event) => {
     if (event.touches && event.touches[0]) {
@@ -67,8 +67,8 @@ const onTouchMove = (event) => {
     }
 };
 
-window.addEventListener("mousemove", onMouseMove, false);
-window.addEventListener("touchmove", onTouchMove, false);
+// window.addEventListener("mousemove", onMouseMove, false);
+// window.addEventListener("touchmove", onTouchMove, false);
 
 const showSplat = () => {
     ("use strict");
