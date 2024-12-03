@@ -1485,9 +1485,9 @@ window.addEventListener('touchend', e => {
 
 modeChangeButton.addEventListener('pointerdown', () => {
     if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(0, 0, 0, 1)") {
-        config.BACK_COLOR = { r: 238, g: 244, b: 244 };
-    } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
+    } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
+        config.BACK_COLOR = { r: 238, g: 244, b: 244 };
     }
     drawColor(target, normalizeColor(config.BACK_COLOR));
 })
