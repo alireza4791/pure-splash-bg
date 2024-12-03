@@ -1486,10 +1486,10 @@ window.addEventListener('touchend', e => {
 
 modeChangeButton.addEventListener('pointerdown', () => {
     // console.log(getComputedStyle(document.body).getPropertyValue('--black'));
-    if (modeStatus = 'white') {
+    if (modeStatus == 'white') {
         config.BACK_COLOR = { r: 18, g: 19, b: 21 };
         modeStatus = 'black';
-    } else if (modeStatus = 'black') {
+    } else if (modeStatus == 'black') {
         config.BACK_COLOR = { r: 238, g: 244, b: 244 };
         modeStatus = 'white';
     }
@@ -1548,7 +1548,27 @@ function correctDeltaY(delta) {
 }
 
 function generateColor() {
-    let c = HSVtoRGB(0.1, 1.0, 1.0);
+    let c = {
+        r: 197,
+        g: 252,
+        b: 252
+    };
+    if (modeStatus == 'black') {
+        // c = HSVtoRGB(0.1, 1.0, 1.0)
+        c = {
+            r: 197,
+            g: 252,
+            b: 252
+        }
+    }
+    else if (modeStatus == 'white') {
+        // c = HSVtoRGB(0.1, 1.0, 1.0)
+        c = {
+            r: 225,
+            g: 234,
+            b: 233
+        }
+    }
     c.r *= 0.15;
     c.g *= 0.15;
     c.b *= 0.15;
