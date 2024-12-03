@@ -1436,7 +1436,7 @@ homePageBody.addEventListener('mouseover', e => {
     updatePointerDownData(pointer, -1, posX, posY);
 });
 
-canvasOuter.addEventListener('mousemove', e => {
+homePageBody.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
     // let posX = scaleByPixelRatio(e.offsetX);
@@ -1446,7 +1446,7 @@ canvasOuter.addEventListener('mousemove', e => {
     updatePointerMoveData(pointer, posX, posY);
 });
 
-canvasOuter.addEventListener('mouseup', () => {
+window.addEventListener('mouseup', () => {
     updatePointerUpData(pointers[0]);
 });
 
