@@ -1489,7 +1489,9 @@ modeChangeButton.addEventListener('pointerdown', () => {
     } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
         config.BACK_COLOR = { r: 238, g: 244, b: 244 };
     }
-    drawColor(null, normalizeColor(config.BACK_COLOR));
+    // drawColor(null, normalizeColor(config.BACK_COLOR));
+    colorProgram.bind();
+    gl.uniform4f(colorProgram.uniforms.color, normalizeColor(config.BACK_COLOR).r, normalizeColor(config.BACK_COLOR).g, normalizeColor(config.BACK_COLOR).b, 1);
 })
 
 // window.addEventListener('keydown', e => {
