@@ -28,6 +28,7 @@ SOFTWARE.
 const canvas = document.querySelector('.splash-canvas');
 const homePageBody = document.querySelector("body");
 const mainWrapper = document.querySelector("#main");
+const modeChangeButton = document.querySelector('.mode-toggle-wrapper');
 
 resizeCanvas();
 
@@ -40,7 +41,7 @@ let config = {
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 20,
     CURL: 30,
-    SPLAT_RADIUS: 0.2,
+    SPLAT_RADIUS: 0.15,
     SPLAT_FORCE: 5000,
     SHADING: true,
     COLORFUL: true,
@@ -1481,6 +1482,15 @@ window.addEventListener('touchend', e => {
         updatePointerUpData(pointer);
     }
 });
+
+modeChangeButton.addEventListener('pointerdown', () => {
+    if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(0, 0, 0, 1)") {
+        config.BACK_COLOR = { r: 238, g: 244, b: 244 };
+    } else if (getComputedStyle(document.body).getPropertyValue('--black') == "rgba(255, 255, 255, 1)") {
+        config.BACK_COLOR = { r: 18, g: 19, b: 21 };
+    }
+    drawColor(target, normalizeColor(config.BACK_COLOR));
+})
 
 // window.addEventListener('keydown', e => {
 //     if (e.code === 'KeyP')
